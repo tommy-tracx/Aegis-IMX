@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: Performance Service API
+  version: 1.0.0
+paths:
+  /performance/{portfolioId}:
+    get:
+      summary: Get performance metrics for a portfolio
+      parameters:
+        - name: portfolioId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Performance metrics
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/performanceMetric.json

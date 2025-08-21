@@ -1,0 +1,48 @@
+asyncapi: '2.6.0'
+info:
+  title: Aegis-IMX Event Bus
+  version: 1.0.0
+channels:
+  portfolio.created:
+    subscribe:
+      summary: Portfolio created event
+      message:
+        name: PortfolioCreated
+        payload:
+          $ref: schemas/portfolio.json
+  order.executed:
+    subscribe:
+      summary: Order executed event
+      message:
+        name: OrderExecuted
+        payload:
+          $ref: schemas/order.json
+  risk.limitBreached:
+    subscribe:
+      summary: Risk limit breached
+      message:
+        name: RiskLimitBreached
+        payload:
+          type: object
+          properties:
+            portfolioId:
+              type: string
+            metric:
+              type: string
+            value:
+              type: number
+          required: [portfolioId, metric, value]
+  compliance.violation:
+    subscribe:
+      summary: Compliance violation detected
+      message:
+        name: ComplianceViolation
+        payload:
+          $ref: schemas/complianceReport.json
+  performance.calculated:
+    subscribe:
+      summary: Performance metrics calculated
+      message:
+        name: PerformanceCalculated
+        payload:
+          $ref: schemas/performanceMetric.json
