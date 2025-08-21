@@ -1,5 +1,11 @@
 # MVP Catalog
 
+## Risk Engine MVP
+- Parametric and Historical VaR calculations
+- FastAPI interface for running risk and retrieving results
+- Supports positions for parametric and returns data for historical VaR
+- In-memory cache for run results
+=======
 This catalog enumerates Phase 0 vertical slices. Each slice includes deliverables across infrastructure, services, APIs, UI, tests, sample data, runbooks, and observability hooks.
 
 ## 1. Data Lake & Ingestion
@@ -78,4 +84,3 @@ This catalog enumerates Phase 0 vertical slices. Each slice includes deliverable
   - UAT: SOC2 control walkthrough.
 - **Security Model**: WORM storage; hashed log blocks; strict PII minimization policies.
 - **Integration Tests**: Validate end-to-end audit trail from OMS order to Reporting view.
-

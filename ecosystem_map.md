@@ -1,5 +1,8 @@
 # Ecosystem Map
 
+- `risk_engine/`: core risk calculations and API service
+- `tests/`: unit tests covering parametric and historical VaR
+- Documentation files: `README.md`, `mvp_catalog.md`, `component_map.md`
 ## Overview
 Aegis-IMX is a modular investment management platform composed of seven core services. Each service is delivered as a vertical slice with its own infrastructure, service layer, APIs, UI, tests, data samples, runbooks, and observability hooks.
 
@@ -17,4 +20,3 @@ Aegis-IMX is a modular investment management platform composed of seven core ser
 - OMS triggers Compliance checks before order submission and records decisions.
 - Reporting aggregates outputs from Risk, Performance, and Compliance.
 - Governance ingests logs from every service for unified audit and explainability.
-
