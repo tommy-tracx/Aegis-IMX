@@ -1,7 +1,6 @@
 # Aegis-IMX
 
-Enterprise-grade reference implementation for institutional investment management, developed by **NeuralQuantum.ai**.  
-Provides modular services including Order & Execution Management (OMS/EMS), Portfolio, Compliance, and Risk engines.
+Enterprise-grade reference implementation for institutional investment management, developed by **NeuralQuantum.ai**. The platform provides modular services including Order & Execution Management (OMS/EMS), Portfolio, Compliance, and Risk engines.
 
 ---
 
@@ -9,22 +8,18 @@ Provides modular services including Order & Execution Management (OMS/EMS), Port
 
 - **Order & Execution Management (OMS/EMS)**
   - FastAPI service with interactive endpoints.
-
 - **Portfolio Service**
   - CRUD operations for portfolios.
   - Role-based access control (RBAC).
   - Position aggregation and reporting.
-
 - **Compliance Engine**
   - Pre-trade and post-trade rule evaluation.
   - Policy versioning, signatures, and approvals.
   - Human-readable audit explanations.
-
 - **Risk Engine**
   - Parametric and Historical Value-at-Risk (VaR) calculations using Polars.
   - FastAPI endpoints for risk runs and result retrieval.
   - In-memory caching of risk evaluation results.
-
 - **Enterprise Architecture Foundations**
   - Modular microservices (OMS, Portfolio, Compliance, Risk).
   - Event-driven integration with Kafka/Redpanda.
@@ -50,16 +45,23 @@ Provides modular services including Order & Execution Management (OMS/EMS), Port
 
 ---
 
-## Setup
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+- `pip` for dependency management
+
+### Installation
 
 ```bash
 pip install -r requirements.txt
 uvicorn app.main:app --reload
+```
 
+### Testing
 
-⸻
-
-Testing
-
+```bash
 pytest
+```
 

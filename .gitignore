@@ -1,10 +1,33 @@
 __pycache__/
-*.pyc
-pytest_cache/
-lineage_events.jsonl
 *.py[cod]
-*.pyc
-*.py[cod]
-.pytest_cache/
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging artifacts
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Logs and databases
+*.log
 *.db
-/.pytest_cache/
+*.sqlite3
+lineage_events.jsonl
+
+# Test and coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
