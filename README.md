@@ -1,57 +1,65 @@
 # Aegis-IMX
 
-Lakehouse ingestion framework for market, reference, and internal data. Provides
-connectors, batch and streaming pipelines, schema registry, quality checks,
-security utilities, and lineage tracking.
+Enterprise-grade reference implementation for institutional investment management, developed by **NeuralQuantum.ai**.  
+Provides modular services including Order & Execution Management (OMS/EMS), Portfolio, Compliance, and Risk engines.
 
-### Features
+---
 
-- Configurable connectors for market, reference, and internal datasets.
-- Batch pipeline with Bronze→Silver→Gold stages, optional column encryption, and SCD2 tracking.
-- Streaming ingestion from Kafka with watermarking and deduplication.
-- Pydantic schemas and lightweight data quality expectations.
-- JSON lineage events for simple audit trails.
+## Features
 
-## Usage
+- **Order & Execution Management (OMS/EMS)**
+  - FastAPI service with interactive endpoints.
 
-```python
-from pathlib import Path
+- **Portfolio Service**
+  - CRUD operations for portfolios.
+  - Role-based access control (RBAC).
+  - Position aggregation and reporting.
 
-from cryptography.fernet import Fernet
-from pyspark.sql import SparkSession
+- **Compliance Engine**
+  - Pre-trade and post-trade rule evaluation.
+  - Policy versioning, signatures, and approvals.
+  - Human-readable audit explanations.
 
-from aegis_ingest.connectors.internal import InternalConnector
-from aegis_ingest.pipelines.batch import BatchPipeline
+- **Risk Engine**
+  - Parametric and Historical Value-at-Risk (VaR) calculations using Polars.
+  - FastAPI endpoints for risk runs and result retrieval.
+  - In-memory caching of risk evaluation results.
 
-spark = (
-    SparkSession.builder.appName("demo").master("local[*]")
-    .config("spark.sql.shuffle.partitions", "1")
-    .getOrCreate()
-)
+- **Enterprise Architecture Foundations**
+  - Modular microservices (OMS, Portfolio, Compliance, Risk).
+  - Event-driven integration with Kafka/Redpanda.
+  - Security via OIDC, OPA, and mTLS.
+  - Lakehouse platform with Delta/Iceberg, Spark, and Flink.
+  - MLOps pipelines and feature registry.
 
-base_path = Path("/tmp/lakehouse")
-pipeline = BatchPipeline(spark, base_path)
-connector = InternalConnector(spark, "positions", Path("data/internal/positions.csv"))
+---
 
-key = Fernet.generate_key()
-pipeline.run(
-    name="positions",
-    connector=connector,
-    pii_columns=["account_id"],
-    encryption_key=key,
-    scd2_keys=["id"],
-    effective_date_col="as_of",
-)
-```
+## Repository Layout
 
-### Encryption
+- `infra/` – Terraform, Helm, GitHub Actions CI/CD
+- `gateway/` – API Gateway with OPA plugin
+- `idp/` – OIDC identity provider
+- `lake/` – Delta/Iceberg lakehouse
+- `services/` – Core domain microservices (OMS, Portfolio, Compliance, Risk)
+- `ui/` – Next.js/React front-end
+- `mlops/` – Model registry and feature pipelines
+- `shared/` – Common libraries and schemas
+- `tools/` – Orchestration and developer utilities
+- `tests/` – E2E, chaos, and performance test suites
+- `docs/` – Architecture, threat model, data classification, cost model
 
-Sensitive columns can be encrypted by supplying a Fernet key either via the
-``PII_ENCRYPTION_KEY`` environment variable or the ``encryption_key`` argument
-to the batch pipeline.
+---
 
-## Running Tests
+## Setup
 
 ```bash
-pytest -q
-```
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+
+
+⸻
+
+Testing
+
+pytest
+

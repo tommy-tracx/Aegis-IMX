@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portfolio",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "holdings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "assetId": {"type": "string"},
+          "quantity": {"type": "number"}
+        },
+        "required": ["assetId", "quantity"]
+      }
+    }
+  },
+  "required": ["id", "name", "holdings"]
+}
