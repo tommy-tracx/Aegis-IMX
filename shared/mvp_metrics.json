@@ -1,0 +1,11 @@
+{
+  "slices": [
+    {"name": "Data Lake & Ingestion", "MV": 5, "TF": 4, "TTM": 3, "SI": 5},
+    {"name": "Portfolio & Risk Core", "MV": 5, "TF": 3, "TTM": 2, "SI": 5},
+    {"name": "OMS/EMS Lite", "MV": 4, "TF": 3, "TTM": 3, "SI": 4},
+    {"name": "Reporting & Client Portal", "MV": 4, "TF": 3, "TTM": 3, "SI": 3},
+    {"name": "Compliance Rules Engine", "MV": 4, "TF": 2, "TTM": 2, "SI": 4},
+    {"name": "Performance & Attribution", "MV": 3, "TF": 3, "TTM": 2, "SI": 4},
+    {"name": "Governance, Audit & Explainability", "MV": 3, "TF": 2, "TTM": 1, "SI": 5}
+  ]
+}
