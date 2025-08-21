@@ -11,6 +11,7 @@ Enterprise architecture and reference implementation for institutional investmen
 - `ui/` – Next.js/React front-end
 - `mlops/` – Model registry and feature pipelines
 - `shared/` – Libraries and schemas
+- `tools/` – Orchestration utilities
 - `tests/` – E2E, chaos, and performance tests
 - `docs/` – Architecture, threat model, data classification, cost model
 
