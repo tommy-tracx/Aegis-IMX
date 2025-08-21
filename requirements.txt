@@ -4,11 +4,17 @@ uvicorn==0.27.1
 pydantic==2.7.4
 
 # Data & Computation
-polars
-scipy
+polars==0.20.16
+scipy==1.11.4
 sqlalchemy==2.0.29
-pyyaml
+pyyaml==6.0.1
+pyspark==3.5.1
+pandas==2.2.2
+
+# Security
+cryptography==42.0.5
 
 # Testing
 pytest==8.1.1
 httpx==0.27.0
+
