@@ -1,0 +1,6 @@
+polars
+fastapi
+uvicorn
+pydantic
+scipy
+pytest
