@@ -8,7 +8,6 @@ Provides modular services including Order & Execution Management (OMS/EMS), Port
 ## Features
 
 - **Order & Execution Management (OMS/EMS)**
-  - Lightweight demo for order creation, execution, and management.
   - FastAPI service with interactive endpoints.
 
 - **Portfolio Service**
