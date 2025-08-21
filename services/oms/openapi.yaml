@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: OMS/EMS Service API
+  version: 1.0.0
+paths:
+  /orders:
+    post:
+      summary: Submit order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../shared/schemas/order.json
+      responses:
+        '201':
+          description: Order accepted
+  /orders/{id}:
+    get:
+      summary: Get order status
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Order
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/order.json

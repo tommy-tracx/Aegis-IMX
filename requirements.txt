@@ -4,3 +4,9 @@ uvicorn
 pydantic
 scipy
 pytest
+fastapi==0.109.2
+uvicorn==0.27.1
+sqlalchemy==2.0.29
+pydantic==2.7.4
+pytest==8.1.1
+httpx==0.27.0

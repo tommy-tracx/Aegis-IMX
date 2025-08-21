@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ComplianceReport",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string"},
+    "portfolioId": {"type": "string"},
+    "status": {"type": "string", "enum": ["PASS", "FAIL"]},
+    "violations": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "required": ["id", "portfolioId", "status", "violations"]
+}
