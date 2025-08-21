@@ -1,5 +1,23 @@
 # Aegis-IMX
 
+## Portfolio Service
+
+This project provides a minimal FastAPI implementation of a portfolio service.
+It supports portfolio CRUD operations with role-based access control and basic
+position aggregation.
+
+### Setup
+
+```bash
+pip install -r requirements.txt
+```
+
+### Running Tests
+
+```bash
+pytest
+```
+=======
 Enterprise architecture and reference implementation for institutional investment management.
 
 ## Repository Layout
@@ -14,5 +32,3 @@ Enterprise architecture and reference implementation for institutional investmen
 - `tools/` – Orchestration utilities
 - `tests/` – E2E, chaos, and performance tests
 - `docs/` – Architecture, threat model, data classification, cost model
-
-Refer to `docs/architecture.md` for the full system specification.
