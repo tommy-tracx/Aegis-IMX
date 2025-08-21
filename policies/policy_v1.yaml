@@ -1,0 +1,15 @@
+version: "1.0"
+approved_by: "Chief Compliance"
+pretrade_rules:
+  - name: "restricted_list"
+    description: "Asset must not be on restricted list."
+    expression: "order.symbol not in portfolio_state.restricted_list"
+  - name: "issuer_limit"
+    description: "Position must not exceed issuer limit."
+    expression: >
+      (portfolio_state.positions.get(order.symbol, 0) + order.quantity) <=
+      portfolio_state.issuer_limits.get(order.issuer, 1e12)
+posttrade_rules:
+  - name: "cash_non_negative"
+    description: "Portfolio cash must remain non-negative after trade."
+    expression: "portfolio_state.cash is None or portfolio_state.cash >= 0"
