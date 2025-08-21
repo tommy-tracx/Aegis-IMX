@@ -51,6 +51,7 @@ Enterprise-grade reference implementation for institutional investment managemen
 
 - Python 3.10+
 - `pip` for dependency management
+- Docker and Docker Compose (optional)
 
 ### Installation
 
@@ -58,6 +59,16 @@ Enterprise-grade reference implementation for institutional investment managemen
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
+
+### Docker
+
+Build and start the API using Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+Visit `http://localhost:8000/docs` for interactive API docs.
 
 ### Testing
 
