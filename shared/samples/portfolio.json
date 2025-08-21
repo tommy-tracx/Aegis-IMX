@@ -1,0 +1,8 @@
+{
+  "id": "p123",
+  "name": "Global Equity",
+  "holdings": [
+    {"assetId": "AAPL", "quantity": 100},
+    {"assetId": "MSFT", "quantity": 200}
+  ]
+}

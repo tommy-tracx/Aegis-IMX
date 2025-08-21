@@ -1,0 +1,36 @@
+asyncapi: '2.6.0'
+info:
+  title: Risk Topics
+  version: '0.1.0'
+channels:
+  portfolio_snapshot.v1:
+    subscribe:
+      message:
+        $ref: '#/components/messages/PortfolioSnapshot'
+  risk_completed.v1:
+    publish:
+      message:
+        $ref: '#/components/messages/RiskResult'
+components:
+  messages:
+    PortfolioSnapshot:
+      payload:
+        type: object
+        properties:
+          portfolioId:
+            type: string
+          asOf:
+            type: string
+            format: date-time
+    RiskResult:
+      payload:
+        type: object
+        properties:
+          runId:
+            type: string
+          portfolioId:
+            type: string
+          measures:
+            type: object
+            additionalProperties:
+              type: number
