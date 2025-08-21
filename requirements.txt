@@ -2,6 +2,7 @@
 fastapi==0.109.2
 uvicorn==0.27.1
 pydantic==2.7.4
+setuptools>=70.0.0
 
 # Data & Computation
 polars==0.20.16
