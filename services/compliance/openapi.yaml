@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: Compliance Service API
+  version: 1.0.0
+paths:
+  /compliance/{portfolioId}:
+    get:
+      summary: Get compliance report for a portfolio
+      parameters:
+        - name: portfolioId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Compliance report
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/complianceReport.json

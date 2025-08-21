@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Order",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string"},
+    "portfolioId": {"type": "string"},
+    "symbol": {"type": "string"},
+    "side": {"type": "string", "enum": ["BUY", "SELL"]},
+    "quantity": {"type": "number"},
+    "price": {"type": "number"}
+  },
+  "required": ["id", "portfolioId", "symbol", "side", "quantity", "price"]
+}

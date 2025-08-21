@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: Portfolio Service API
+  version: 1.0.0
+paths:
+  /portfolios:
+    get:
+      summary: List portfolios
+      responses:
+        '200':
+          description: A list of portfolios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../shared/schemas/portfolio.json
+    post:
+      summary: Create portfolio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../shared/schemas/portfolio.json
+      responses:
+        '201':
+          description: Created
+  /portfolios/{id}:
+    get:
+      summary: Get portfolio by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Portfolio
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/portfolio.json
