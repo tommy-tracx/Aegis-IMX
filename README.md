@@ -1,5 +1,13 @@
 # Aegis-IMX Risk Engine
 
+Enterprise architecture and reference implementation for institutional investment management by NeuralQuantum.ai.
+
+## Features
+- Modular microservices: portfolio, risk, order management, compliance, and performance.
+- Zero-trust security with OIDC, OPA, and mTLS service mesh.
+- Event-driven integration via Kafka/Redpanda.
+- Lakehouse data platform using Delta/Iceberg, Spark, and Flink.
+=======
 This project provides a minimal risk engine capable of running Value-at-Risk (VaR) computations via a FastAPI service.
 
 ## Features
@@ -20,7 +28,6 @@ pip install -r requirements.txt  # if available
 uvicorn risk_engine.api:app --reload
 pytest
 ```
-=======
 # Aegis-IMX
 
 Enterprise-grade reference implementation for institutional investment management.  
@@ -47,6 +54,29 @@ Includes lightweight Order & Execution Management (OMS/EMS) demo and a minimal P
 - `shared/` – Libraries and schemas
 - `tools/` – Orchestration and utilities
 - `tests/` – E2E, chaos, and performance tests
+
+- `docs/` – Architecture, threat model, data classification, cost model
+
+## Getting Started
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Run the minimal portfolio service:
+```bash
+uvicorn portfolio_service.main:app --reload
+```
+
+## Testing
+Execute unit tests:
+```bash
+pytest
+```
+
+## Documentation
+Additional architectural and operational guides are available in the [docs](docs/README.md) directory.
+
 - `docs/` – Architecture, threat models, data classification, cost models
 
 ---
@@ -76,4 +106,3 @@ See /docs for:
 	•	Architecture overview
 	•	Threat model
 	•	Data classification
-
